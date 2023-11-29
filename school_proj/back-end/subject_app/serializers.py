@@ -10,9 +10,18 @@ class SubjectSerializer(serializers.ModelSerializer):
         fields = ["subject_name", "professor", "students", "grade_average"]
 
     def get_students(self, obj):
-        return obj.students.count()
+        if obj.students:
+            return obj.students.count()
+        return 0
     
     def get_grade_average(self, obj):
         grades = obj.grades.all()
-        return round(sum([x.grade for x in grades])/len(grades),2)
+        if len(grades):
+            return round(sum([x.grade for x in grades])/len(grades),2)
+        return 0
+    
+class SubjectOnlySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Subject
+        fields = "__all__"
 

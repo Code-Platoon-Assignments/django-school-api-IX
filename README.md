@@ -8,7 +8,20 @@ In this assignment you will implement the users capability to update Student, Su
 
 ## Tasks
 
-- Add a PUT method at the endpoint `http://127.0.0.1:8000/api/v1/subjects/<str:subject>/` that will allow users to update Subject Data.
-- Add a PUT method at the endpoint `http://127.0.0.1:8000/api/v1/students/<int:id>/` that will allow user to update Student Data.
-- Create a feature that will allow users to ping the endpoint `http://127.0.0.1:8000/api/v1/grades/<int:id>/` that will allow users to update Grade Data.
-  
+Create CRUD capabilities for all 3 models within our School API.
+
+- Grade:
+  - Create a Grade with a Student, Subject, and a starting grade of 100.00
+  - Update a Grades numeric value
+  - Delete a Grade for a Student and Subject
+
+- Student:
+  - Create a Student with default values and no subject
+  - Create a route that will allow you to add subjects to students
+  - Update a Students (all fields)
+  - Delete a Student from the DB
+
+- Subject:
+  - Create a Subject with default values
+  - Update the name or professor of a Subject
+  - Delete a Subject
